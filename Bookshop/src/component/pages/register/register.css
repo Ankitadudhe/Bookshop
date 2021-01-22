@@ -1,0 +1,145 @@
+.registration-container{
+  padding: 16px;
+  color:black;
+  width: 50%;
+  margin: auto;
+  height: 70%;
+}
+.registration-container label{
+  font-size: 16px;
+  padding-bottom: 5px;
+}
+.registration-header{
+  text-align: center;
+  margin-top: -15px;
+  margin-bottom: 10px;
+}
+.reg-form{
+  width:70%;
+  margin: auto;
+  margin-top: 4%;
+  padding: 6%;
+  padding-bottom: 0;
+  box-shadow: 0 0 10px rgba(0,0,0,0.6);
+  -moz-box-shadow: 0 0 10px rgba(0,0,0,0.6);
+  -webkit-box-shadow: 0 0 10px rgba(0,0,0,0.6);
+  -o-box-shadow: 0 0 10px rgba(0,0,0,0.6);
+}
+.reg-form input[type=text]{
+  width: 100%;
+  margin-top: 0.5%;
+  padding: 1.6%;
+  box-sizing: border-box;
+  border:2px solid silver;
+  font-size: 15px;
+}
+input[type=text],input[type=email], input[type=password],input[type=number]{
+  width: 100%;
+  margin-top: 0.5%;
+  padding: 1.6%;
+  box-sizing: border-box;
+  /* border:2px solid silver; */
+  font-size: 15px;
+}
+textarea{
+  width: 100%;
+  height: 45px;
+  margin-top: 0.5%;
+  padding: 1.6%;
+  box-sizing: border-box;
+  border:2px solid silver;
+  resize: none;
+}
+input[type=submit]{
+  background-color:#0080ff;
+  border: 1px solid white;
+  width: 50%;
+  color:white;
+  font-size: 26px;
+  margin-top: 4%;
+  margin-bottom: 3%;
+  padding: 1.6%;
+}
+@media (max-width:1440px)
+{
+
+}
+@media (max-width:1024px)
+{
+  .registration-container{
+      width: 60%;
+  }
+}
+@media (max-width:768px)
+{
+  .registration-container{
+      width: 65%;
+  }
+  .form{
+      width:75%;
+  }
+}
+@media (max-width:425px)
+{
+  .registration-container{
+      width: 80%;
+  }
+  .form{
+      width:80%;
+  }
+  .registration-header{
+      margin-top: 0;
+  }
+}
+label.R{
+  color:#4285F4;
+  font-weight: 600;
+}
+label.e{
+  color:#DB4437;
+  font-weight: 600;
+}
+label.g{
+  color:red;
+  font-weight: 600;
+}
+label.i{
+  color:#4285F4;
+  font-weight: 600;
+}
+label.s{
+  color:#0F9D58;
+  font-weight: 600;
+}
+label.t{
+  color:#DB4437;
+  font-weight: 600;
+}
+label.e{
+  color:#F4B400;
+  font-weight: 600;
+}
+label.r{
+  color:#4285F4;
+  font-weight: 600;
+}
+label.a{
+  color:red;
+  font-weight: 600;
+}
+label.t{
+  color:#4285F4;
+  font-weight: 600;
+}
+label.i{
+  color:#F4B400;
+  font-weight: 600;
+}
+label.o{
+  color:#DB4437;
+  font-weight: 600;
+}
+label.n{
+  color:#0F9D58;
+  font-weight: 600;
+}
