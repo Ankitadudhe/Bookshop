@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import Axios from 'axios';
-import {Card} from '@material-ui/core';
+import {Card,Typography} from '@material-ui/core';
 import './travel.css'
 import AddToCart from '../../atom/addToCart'
+import Image from "material-ui-image";
+
 class Travel extends Component {
 
     constructor(props){
@@ -28,18 +30,22 @@ class Travel extends Component {
                 {
                    this.state.travelbooks.map((bookdata)=>(
                        <Card>
-                           <div>
-                               <img src={bookdata.image} />
-                           </div>
-                           <div>
+                           <Image
+                             src={bookdata.image}
+                              style={{ padding: 0, height: 200, textAlign: "center" }}
+                              imageStyle={{ width: 350, position: "static" }}
+                              disableSpinner
+                           />
+                           <Typography gutterBottom variant="h6" component="p" color="primary">
                                Author:{bookdata.author}
-                           </div>
-                           <div>
-                               Title:{bookdata.title}
-                           </div>
-                           <div>
-                               Price:Rs{bookdata.price}
-                           </div>
+                            </Typography>
+                     <Typography gutterBottom variant="h6" component="p" color="primary">
+
+                        Title:{bookdata.title}
+                     </Typography>
+                            <Typography style={{ fontWeight: 500 }} color="secondary" component="p">
+                               Price:Rs {bookdata.price}
+                              </Typography>
                            <AddToCart 
                            products={this.props.product}
                            />
