@@ -3,8 +3,8 @@ import './register.css'
 import Axios from 'axios';
 import * as actions from "../../../redux/actions/register";
 import { Link, Redirect } from 'react-router-dom'
-
 import {connect} from "react-redux";
+import Home from '../home';
 class Register extends Component {
     constructor(props) {
         super(props);
@@ -12,6 +12,8 @@ class Register extends Component {
             name: "",
             email: "",
             password: "",
+            registerSuccess:false,
+           
         }
         this.initialState = {
             name: "",
@@ -22,20 +24,34 @@ class Register extends Component {
     handlechangeall = (event) => {
         this.setState({ [event.target.name]: event.target.value })
     };
-    handlesubmit = (event) => {
+   handlesubmit = (event) => {
         event.preventDefault();
             this.setState(this.initialState);
-            this.props.registerUser(this.state.name,this.state.email,this.state.password);
+            // this.props.registerUser(this.state.name,this.state.email,this.state.password);
+
         Axios.post("http://localhost:5000/register",{
             name:this.state.name,
             email:this.state.email,
             password:this.state.password
         }).then(()=>{
-            console.log("error");
+             this.setState({registerSuccess:true});
+            //  this.handlebutton();
+            this.sendRedirect();
+            console.log("values inserted");
         })
+        
     };
+     sendRedirect = () => {
+        this.props.history.push('/home');
+    };
+    handlebutton=()=>{
+ if(this.state.registerSuccess===true){
+            return <Redirect to="/home" />
+        }    }
     render() {
-        console.log('datauser of register',this.state.name);
+    //    if(this.state.registerSuccess===true){
+    //         return <Redirect to="/home" />
+    //     }
         return ( 
             <div className="registration-container">
             <form onSubmit={this.handlesubmit} className="reg-form">
@@ -64,9 +80,7 @@ class Register extends Component {
                     <label>Password </label><br/>
                     <div style={{fontSize:16,color:"red"}}>{this.state.passwordError}</div>
                     <input type="password" name="password" placeholder="Enter password" value={this.state.password} onChange={this.handlechangeall} /><br /><br />
-
-                    <Link to="Home"> <input type="submit" value="Submit" id="register"/> <br /><br /></Link>
-
+                    <input type="submit" value="Submit" id="register"/> <br /><br />
                 </form>
             </div>
         )
