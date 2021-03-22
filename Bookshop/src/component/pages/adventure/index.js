@@ -53,7 +53,7 @@ class Adventure extends Component {
                          </Typography>
                             <Typography style={{ fontWeight: 500 }} color="secondary" component="p">
                                Price:Rs {bookdata.price}
-                              </Typography>
+                            </Typography>
                            <AddToCart 
                            products={this.props.product}
                            />

@@ -25,6 +25,7 @@ class Travel extends Component {
 
     }
     render() {
+        console.log("data travelbook",this.state.travelbooks);
         return (
             <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', marginTop: '20px' ,justifyContent:'space-between',flex:3}}>
                 {
